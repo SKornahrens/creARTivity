@@ -56,12 +56,24 @@ const items = [
 class Selectsplice extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeIndex: 0 };
+    this.state = {
+        activeIndex: 0,
+        selectedArt : items[0] };
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.goToIndex = this.goToIndex.bind(this);
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
+    this.selectedArt = this.selectedArt.bind(this);
+  }
+
+
+
+  selectedArt (selectedArt) {
+      console.log('selected art method', selectedArt);
+      this.setState({
+          selectedArt
+      })
   }
 
   onExiting() {
@@ -95,14 +107,19 @@ class Selectsplice extends Component {
     const slides = items.map((item) => {
       return (
         <CarouselItem
+
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.src}
           src={item.src}
           altText={item.altText}
         >
+
           <CarouselCaption  className="text-dark"captionHeader={item.caption} />
+              <span className="click-mask"onClick={()=>this.selectedArt(item)}>
+              </span>
         </CarouselItem>
+
       );
     });
 
@@ -134,7 +151,7 @@ class Selectsplice extends Component {
                         <CardTitle>
                             <div className="float-left ml-4 my-2">Spliced Art</div>
                         </CardTitle>
-                        <CardImg top width="100%" height="72%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+                        <CardImg top width="100%" height="72%" src={this.state.selectedArt.src} />
                         <CardBody className="float-left ml-2">
                           <Link to="/draw"><Button color="primary btn-lg active">creART<i className="fa fa-arrow-right fa-lg text-white" aria-hidden="true"></i></Button></Link>
                         </CardBody>
