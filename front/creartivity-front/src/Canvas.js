@@ -1,18 +1,27 @@
 import React from 'react';
 import {Button} from 'reactstrap';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Canvas = (props) => {
 
   return (
-    <div className="canvasDiv">
+    <div className="canvasDiv my-3">
 
       <canvas className="canvas" width={500} height={500}></canvas>
 
 
-        <div className="button">
-          <Button  color="primary" size="lg"><i className="fa fa-step-backward text-white"></i>  Go Back</Button>{' '}
-          <Button  color="primary"  size="lg">  Cre<span className="createorlog5">ART    </span>    <i className="fa fa-step-forward text-white"></i></Button>{' '}
+        <div className="row">
+        <div className= "col-s-12 col-m-3 mx-auto mt-1 ">
+        <Link to="/select">
+          <Button  color="primary" size="lg"><i className="fa fa-arrow-left text-white"></i>  Go Back</Button>
+        </Link>
+        </div>
+        <div className= "col-s-12 col-m-3 mx-auto mt-1 ">
+        <Link to="/preview">
+          <Button  color="primary"  size="lg">  Cre<span className="createorlog5">ART    </span>    <i className="fa fa-arrow-right text-white"></i></Button>
+        </Link>
+        </div>
         </div>
 
     </div>

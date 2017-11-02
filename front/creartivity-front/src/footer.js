@@ -5,7 +5,7 @@ const Footer = (props) => {
 
 			return (
 
-    <footer className="navbar-fixed-bottom">
+    <footer id="footer" className="navbar-fixed-bottom">
         <div className="container">
           <div className="row">
 
@@ -17,7 +17,7 @@ const Footer = (props) => {
                        <ul className="menu">
                             <span>Menu</span>
                             <li>
-                               <a href="#">Home</a>
+                               <a href="/">Home</a>
                              </li>
 
                              <li>
