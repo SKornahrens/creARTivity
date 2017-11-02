@@ -42,7 +42,7 @@ export default class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="container px-md-5 ">
+      <div className="container px-md-5 mb-1">
       <style>
       @import url('https://fonts.googleapis.com/css?family=Lobster');
       </style>
@@ -112,7 +112,7 @@ export default class NavBar extends React.Component {
             </NavItem>
 
             <NavItem>
-            <NavLink href="https://www.linkedin.com/in/zachariahlowe" className="whiteoutline">Contact</NavLink>
+            <NavLink href="#footer" className="whiteoutline">Contact</NavLink>
 
           </NavItem>
             </Nav>
