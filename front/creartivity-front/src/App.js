@@ -12,6 +12,7 @@ import PreviewCompleted from './previewCompleted';
 import GalleryUser from './galleryUser';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { PropsRoute, PublicRoute, PrivateRoute } from 'react-router-with-props';
 
 
 
@@ -30,14 +31,17 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+
             <Router>
                 <div>
-                  <Route exact path="/" component={Jumbo} />
-                  <Route exact path="/select" component={Selectsplice} />
-                  <Route exact path="/draw" component={Canvas} />
-                  <Route exact path="/preview" component={PreviewCompleted} />
-                  <Route exact path="/gallery" component={GalleryUser} />
+                <PropsRoute exact path="/" component={Jumbo}/>
+                  <PropsRoute exact path="/select" component={Selectsplice} />
+                  <PropsRoute exact path="/draw" component={Canvas} />
+                  <PropsRoute exact path="/preview" component={PreviewCompleted} />
+                  <PropsRoute exact path="/gallery" component={GalleryUser} />
                 </div>
+
+
             </Router>
         <Footer />
       </div>
